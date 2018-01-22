@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="datasource/bonecp.xml"/>
+    <import resource="mailbean/mailbean.xml"/>
+
+    <bean id="mailService" class="com.courseapp.service.impl.MailServiceImpl">
+        <property name="javaMailSender" ref="mailSender"/>
+    </bean>
+
+
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="boneCPDataSource"/>
+    </bean>
+
+    <bean id="teacherDao" class="com.courseapp.dao.impl.TeacherDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="lessonDao" class="com.courseapp.dao.impl.LessonDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="studentDao" class="com.courseapp.dao.impl.StudentDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+     </bean>
+
+    <bean id="studentService" class="com.courseapp.service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+
+    <bean id="lessonService" class="com.courseapp.service.impl.LessonServiceImpl">
+        <property name="lessonDao" ref="lessonDao"/>
+    </bean>
+
+    <bean id="teacherService" class="com.courseapp.service.impl.TeacherServiceImpl">
+        <property name="teacherDao" ref="teacherDao"/>
+    </bean>
+
+</beans>
