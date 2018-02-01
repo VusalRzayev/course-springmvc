@@ -50,15 +50,14 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     public boolean addStudent(Student student) {
-        UUID uuid=UUID.randomUUID();
-        String sql="insert into student(name,surname,address,dob,teacher_id) values(?,?,?,?,?)";
+        String sql="insert into student(name,surname,address,dob,teacher_id,code) values(?,?,?,?,?,?)";
         if(student.getTeacher()==null){
             student.setTeacher(new Teacher());
         }
         try{
             jdbcTemplate.update(sql,new Object[]{
                             student.getName(),student.getSurname(),
-                            student.getAddress(),student.getDob(),student.getTeacher().getId()
+                            student.getAddress(),student.getDob(),student.getTeacher().getId(),student.getStudentCode()
                     }
             );
             return true;

@@ -25,7 +25,7 @@
     <!-- Main content -->
     <section class="content container-fluid">
 
-        <form role="form" method="post">
+
             <div class="box-body">
                 <div class="form-group">
                     <label for="studentNameId">Student Name</label>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="form-group">
                     <label>Select Teacher</label>
-                    <select class="form-control">
+                    <select class="form-control" id="teacherComboId">
                         <option value="0">Select</option>
                         <c:forEach var="teacher" items="${teachers}">
                             <option value="${teacher.id}">${teacher.name} ${teacher.surname}----${teacher.lesson.name}</option>
@@ -71,9 +71,9 @@
             <!-- /.box-body -->
 
             <div class="box-footer">
-                <input type="submit" class="btn btn-primary" value="Add Student"/>
+                <button type="submit" class="btn btn-primary" id="studentAddBtn">Add Student</button>
             </div>
-        </form>
+
 
     </section>
     <!-- /.content -->

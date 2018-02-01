@@ -10,7 +10,19 @@ public class Student {
     private String address;
     private Date dob;
     private Teacher teacher;
+    private String studentCode;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getStudentCode() {
+        return studentCode;
+    }
+
+    public void setStudentCode(String studentCode) {
+        this.studentCode = studentCode;
+    }
 
     public Long getId() {
         return id;

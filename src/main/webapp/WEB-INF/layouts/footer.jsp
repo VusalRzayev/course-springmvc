@@ -98,7 +98,10 @@
 <script src="${resources}/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="${resources}/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script src="${resources}/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="${resources}/js/jquery-ui.js"></script>
 <script src="${resources}/js/core.js"></script>
+<script src="${resources}/js/student.js"></script>
 
 </body>
 </html>
+<%@include file="modal.jsp"%>

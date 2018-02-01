@@ -8,6 +8,19 @@ $(function () {
        autoclose:true
     });
 
+
+
+    $('#resultModal').dialog({
+       autoOpen:false,
+        buttons:{
+           "close":function () {
+               $('#resultModal').dialog('close');
+           }
+        }
+    });
+
+
+
 });
 
 function setActiveTreeViewMenu(){
