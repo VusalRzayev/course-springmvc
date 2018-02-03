@@ -56,7 +56,7 @@
                             <td>${student.teacher.name} ${student.teacher.surname}</td>
                             <td>${student.teacher.lesson.name}</td>
                             <td><button class="btn btn-primary"  data-toggle="modal" data-target="#editStudentModal" onclick="editStudent(${student.id})">Edit</button></td>
-                            <td><button class="btn btn-danger" id="deleteStudentBtn">Delete</button></td>
+                            <td><button class="btn btn-danger" onclick="deleteStudent(${student.id})">Delete</button></td>
                         </tr>
                     </c:forEach>
 

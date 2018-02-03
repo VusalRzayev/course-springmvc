@@ -142,4 +142,19 @@ public class DaoController {
             return result;
         }
      }
+     
+     
+     @RequestMapping(value="/deleteStudent/{id}",method = RequestMethod.GET)
+     @ResponseBody
+     public String deleteStudent(@PathVariable("id")long id){
+         Student student=new Student();
+         student.setId(id);
+         boolean result=studentService.deleteStudent(student);
+         if(result){
+             return "Student Deleted";
+         }else{
+             return "Error";
+         }
+     }
+     
 }
