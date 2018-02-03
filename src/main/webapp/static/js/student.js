@@ -68,3 +68,19 @@ function updateStudent(){
     });
 
 }
+
+
+function deleteStudent(id){
+    $.ajax({
+        type:'get',
+        url:'deleteStudent/'+id,
+        dataType:'html',
+        success:function(response){
+            $('#resultModal').html('<p>'+response+'</p>');
+            $('#resultModal').dialog('open');
+          
+            
+        }
+        
+    });
+}
