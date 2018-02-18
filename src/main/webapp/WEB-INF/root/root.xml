@@ -40,4 +40,14 @@
         <property name="teacherDao" ref="teacherDao"/>
     </bean>
 
+    <bean id="loginDao" class="com.courseapp.dao.impl.LoginDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="loginService" class="com.courseapp.service.impl.LoginServiceImpl">
+        <property name="loginDao" ref="loginDao"/>
+    </bean>
+
+
+
 </beans>

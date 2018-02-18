@@ -83,16 +83,9 @@ public class CourseController {
     }
 
 
-    @RequestMapping(value="/sendEmail",method=RequestMethod.GET)
-    @ResponseBody
-    public  String getPerson(){
-        MailModel mailModel=new MailModel();
-        mailModel.setFrom("CourseApp");
-        mailModel.setTo("e@mail.com");
-        mailModel.setContent("1234");
-        mailModel.setSubject("Code for Registration");
-        mailService.sendMessage(mailModel);
-        return mailService.toString();
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    public ModelAndView login(){
+        return new ModelAndView("login");
     }
 
 
