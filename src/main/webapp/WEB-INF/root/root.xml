@@ -5,7 +5,7 @@
 
     <import resource="datasource/bonecp.xml"/>
     <import resource="mailbean/mailbean.xml"/>
-
+    <import resource="security/spring-security.xml"/>
     <bean id="mailService" class="com.courseapp.service.impl.MailServiceImpl">
         <property name="javaMailSender" ref="mailSender"/>
     </bean>
