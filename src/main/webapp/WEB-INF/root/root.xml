@@ -23,6 +23,14 @@
     <bean id="lessonDao" class="com.courseapp.dao.impl.LessonDaoImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
+    
+    <bean class="com.courseapp.dao.impl.UserDaoImpl" id="userDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    
+    <bean class="com.courseapp.service.impl.UserServiceImpl" id="userService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
 
     <bean id="studentDao" class="com.courseapp.dao.impl.StudentDaoImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>

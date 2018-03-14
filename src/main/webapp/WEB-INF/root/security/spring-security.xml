@@ -31,15 +31,27 @@
         <csrf disabled="true"/>
     </http>
 
-
-
     <authentication-manager>
         <authentication-provider>
             <password-encoder ref="noOpPasswordEncoder"/>
-            <user-service>
-                <user name="mkyong" password="123456" authorities="ROLE_USER" />
-            </user-service>
+            <jdbc-user-service data-source-ref="boneCPDataSource"
+                               users-by-username-query=
+                                       "select username,password, enabled from user where username=?"
+                               authorities-by-username-query=
+                                       "select username,role_name from user join user_role on user.role_id=user_role.id where username =?  " />
         </authentication-provider>
     </authentication-manager>
+
+
+
+
+    <!--<authentication-manager>-->
+        <!--<authentication-provider>-->
+            <!--<password-encoder ref="noOpPasswordEncoder"/>-->
+            <!--<user-service>-->
+                <!--<user name="mkyong" password="123456" authorities="ROLE_USER" />-->
+            <!--</user-service>-->
+        <!--</authentication-provider>-->
+    <!--</authentication-manager>-->
 
 </beans:beans>
